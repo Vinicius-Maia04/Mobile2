@@ -85,21 +85,39 @@ class AdminComponentsState extends State<AdminComponents> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Text('Qtde: ', style: TextStyle(fontSize: 20),),
-                            ElevatedButton(onPressed: (){
-                              setState(() {
-                                qtde += 1;
-                              });
-                            }, child: Icon(Icons.add),
-                            style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.red)),),
-                            ElevatedButton(onPressed: (){
-                              setState(() {
-                                qtde -= 1;
-                                if (qtde<0){
+                            SizedBox(
+                              width: 40,
+                              child: ElevatedButton(onPressed: (){
+                                setState(() {
+                                  qtde += 1;
+                                });
+                              }, child: Icon(Icons.add),
+                              style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.red),
+                              padding: MaterialStatePropertyAll(EdgeInsets.all(5))),),
+                            ),
+                            SizedBox(
+                              width: 40,
+                              child: ElevatedButton(onPressed: (){
+                                setState(() {
+                                  qtde -= 1;
+                                  if (qtde<0){
+                                    qtde = 0;
+                                  }
+                                });
+                              }, child: Icon(Icons.remove),
+                              style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.red),
+                              padding: MaterialStatePropertyAll(EdgeInsets.all(5))),),
+                            ),
+                            SizedBox(
+                              width: 40,
+                              child: ElevatedButton(onPressed: (){
+                                setState(() {
                                   qtde = 0;
-                                }
-                              });
-                            }, child: Icon(Icons.remove),
-                            style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.red)),)
+                                });
+                              }, child: Icon(Icons.cleaning_services),
+                              style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.red),
+                              padding: MaterialStatePropertyAll(EdgeInsets.all(5))),),
+                            ),
                           ],
                         ),
                       ),
