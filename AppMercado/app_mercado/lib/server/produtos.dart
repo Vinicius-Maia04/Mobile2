@@ -12,7 +12,8 @@ class _ProdutosState extends State<Produtos> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Produtos'),
+        title: Center(child: Text('App Mercado - Produtos')),
+        backgroundColor: Colors.green,
       ),
       body: Column(
         children: [
