@@ -11,7 +11,6 @@ class Cadastro extends StatefulWidget {
 
 class _CadastroState extends State<Cadastro> {
   String users_url = 'http://10.109.83.12:3000/usuarios';
-  List dados = [];
   TextEditingController _loginController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -45,6 +44,13 @@ class _CadastroState extends State<Cadastro> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Text('Cadastrar Novo Usuário',
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green
+                  ),),
+                  Padding(padding: EdgeInsets.all(5)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

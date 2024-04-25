@@ -1,5 +1,5 @@
-import 'package:app_mercado/cadastro.dart';
-import 'package:app_mercado/server/produtos.dart';
+import 'package:app_mercado/cadastro_usuarios.dart';
+import 'package:app_mercado/cadastro_produtos.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -33,7 +33,7 @@ class _LoginState extends State<Login> {
     }
 
     if (enc == true){
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Produtos()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Cadastro_Produtos()));
       enc = false;
     }
 
@@ -54,11 +54,12 @@ class _LoginState extends State<Login> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Icon(Icons.account_circle, size: 150, color: Colors.green,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(child: 
-                      Icon(Icons.group,
+                      Icon(Icons.account_box,
                       size: 30,
                       color: Colors.green,)),
                       Padding(padding: EdgeInsets.all(7)),
@@ -107,6 +108,8 @@ class _LoginState extends State<Login> {
                         child: TextField(
                           controller: _passwordController,
                           cursorColor: Colors.green,
+                          obscureText: true,
+                          obscuringCharacter: '•',
                           decoration: InputDecoration(
                             hintText: 'Digite sua Senha',
                             hintStyle: TextStyle(
